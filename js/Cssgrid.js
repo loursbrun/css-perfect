@@ -14,14 +14,57 @@ angular.module("CSSGrid", [])
 
         // Array with name and data
         // Colonne 0
-        $scope.squareID =["block_0_500","block_0_400","block_0_300","block_0_200","block_0_100","block_0_0","block_0_-100","block_0_-200","block_0_-300","block_0_-400","block_0_-500"];
-        $scope.squareX = "0";
-        $scope.squareY =["500","400","300","200","100","0","-100","-200","-300","-400","-500"];
-        $scope.squareMarginTop =["450px","350px","250px","150px","50px","-50px","-150px","-250px","-350px","-450px","-550px"];
-        $scope.squareMarginLeft = "-50px";
-        $scope.squareBGColor = ["grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc",];
 
 
+
+        $scope.squareID =[
+            "block_0_500","block_0_400","block_0_300","block_0_200","block_0_100","block_0_0","block_0_-100","block_0_-200","block_0_-300","block_0_-400","block_0_-500",
+            "block_100_500","block_100_400","block_100_300","block_100_200","block_100_100","block_100_0","block_100_-100","block_100_-200","block_100_-300","block_100_-400","block_100_-500"
+        ];
+        $scope.squareX = [
+            "0","0","0","0","0","0","0","0","0","0","0",
+            "100","100","100","100","100","100","100","100","100","100","100"
+        ];
+        $scope.squareY =[
+            "500","400","300","200","100","0","-100","-200","-300","-400","-500",
+            "500","400","300","200","100","0","-100","-200","-300","-400","-500"
+        ];
+        $scope.squareMarginTop =[
+            "450px","350px","250px","150px","50px","-50px","-150px","-250px","-350px","-450px","-550px",
+            "450px","350px","250px","150px","50px","-50px","-150px","-250px","-350px","-450px","-550px"
+        ];
+        $scope.squareMarginLeft = [
+            "-50px","-50px","-50px","-50px","-50px","-50px","-50px","-50px","-50px","-50px","-50px",
+            "50px","50px","50px","50px","50px","50px","50px","50px","50px","50px","50px"
+        ];
+        $scope.squareBGColor = [
+            "grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey",
+            "#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc"
+        ];
+
+
+        /*
+
+         $scope.squareID =[
+         "block_0_500","block_0_400","block_0_300","block_0_200","block_0_100","block_0_0","block_0_-100","block_0_-200","block_0_-300","block_0_-400","block_0_-500"
+         ];
+         $scope.squareX = [
+         "0","0","0","0","0","0","0","0","0","0","0"
+         ];
+         $scope.squareY =[
+         "500","400","300","200","100","0","-100","-200","-300","-400","-500"
+         ];
+         $scope.squareMarginTop =[
+         "450px","350px","250px","150px","50px","-50px","-150px","-250px","-350px","-450px","-550px"
+         ];
+         $scope.squareMarginLeft = [
+         "-50px","-50px","-50px","-50px","-50px","-50px","-50px","-50px","-50px","-50px","-50px"
+         ];
+         $scope.squareBGColor = [
+         "grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey"
+         ];
+
+        */
 
 
     })
