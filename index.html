@@ -21,19 +21,13 @@
 
 
 
-
-
-
-
-
-
 <div id="block_container">
 
 <!-- Colonne 0 -->
 
 <div ng-repeat="squareid in squareID"
      id="{{squareID[$index]}}"
-     ng-style="{'margin-bottom':squareMarginTop[$index],'margin-left':squareMarginLeft, 'position': 'absolute' , 'width' : '100px' , 'height': '100px','background-color': squareBGColor[0]}">
+     ng-style="{'position': 'absolute','margin-top':squareMarginTop[$index],'margin-left':squareMarginLeft , 'width' : '100px' , 'height': '100px','background-color': squareBGColor[$index]}">
     <p>{{squareX}}<br>{{squareY[$index]}}</p>
 </div>
 
@@ -391,6 +385,7 @@ body {
 /* 0 */
 
 
+/*
 
 #block_0_500 {
     position: absolute;
@@ -447,7 +442,6 @@ body {
     height: 100px;
     background-color: grey;
     opacity: 0.5;
-    margin-left: -50px;
     margin-top: -50px;
 }
 
@@ -495,6 +489,11 @@ body {
     margin-left: -50px;
     margin-top: -550px;
 }
+
+
+*/
+
+
 
 /* 100 */
 
