@@ -5,16 +5,41 @@
     <title>Perfect CSS</title>
     <link rel="stylesheet" href="style/style.css">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 
-<body>
+<body ng-app="CSSGrid" ng-controller="CSSGridCtrl">
+
+
+
+<div class="test">
+    <p>Le dossier contient {{nbMails}} Mails</p>
+
+</div>
+
+
+
+
+
+
+
+
 
 
 <div id="block_container">
 
 <!-- Colonne 0 -->
-<div id="block_0_0"><p>0<br>0</p></div>
+
+<div ng-repeat="squareid in squareID"
+     id="{{squareID[$index]}}"
+     ng-style="{'margin-bottom':squareMarginTop[$index],'margin-left':squareMarginLeft, 'position': 'absolute' , 'width' : '100px' , 'height': '100px','background-color': squareBGColor[0]}">
+    <p>{{squareX}}<br>{{squareY[$index]}}</p>
+</div>
+
+
+
+<!-- <div id="block_0_0"><p>0<br>0</p></div>
 <div id="block_0_500"><p>0<br>500</p></div>
 <div id="block_0_400"><p>0<br>400</p></div>
 <div id="block_0_300"><p>0<br>300</p></div>
@@ -24,7 +49,7 @@
 <div id="block_0_-200"><p>0<br>-200</p></div>
 <div id="block_0_-300"><p>0<br>-300</p></div>
 <div id="block_0_-400"><p>0<br>-400</p></div>
-<div id="block_0_-500"><p>0<br>-500</p></div>
+<div id="block_0_-500"><p>0<br>-500</p></div> -->
 
 <!-- Colonne 100 -->
 <div id="block_100_500"><p>100<br>500</p></div>
@@ -129,7 +154,6 @@
 <div id="block_-100_0"><p>-100<br>0</p></div>
 <div id="block_-100_-100"><p>-100<br>-100</p></div>
 <div id="block_-100_-200"><p>-100<br>-200</p></div>
-<div id="block_-100_-300"><p>-100<br>-300</p></div>
 <div id="block_-100_-300"><p>-100<br>-300</p></div>
 <div id="block_-100_-400"><p>-100<br>-400</p></div>
 <div id="block_-100_-500"><p>-100<br>-500</p></div>
@@ -366,15 +390,7 @@ body {
 
 /* 0 */
 
-#block_0_0 {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: grey;
-    opacity: 0.5;
-    margin-left: -50px;
-    margin-top: -50px;
-}
+
 
 #block_0_500 {
     position: absolute;
@@ -423,6 +439,16 @@ body {
     background-color: grey;
     margin-left: -50px;
     margin-top: 50px;
+}
+
+#block_0_0 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    opacity: 0.5;
+    margin-left: -50px;
+    margin-top: -50px;
 }
 
 #block_0_-100 {
@@ -1945,6 +1971,15 @@ body {
 
 
 </style>
+
+
+
+<!-- Add AngularJS CDN  -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular-sanitize.min.js"></script>
+<script type="text/javascript" src="js/Cssgrid.js"></script>
+
+
 
 
 </body>
