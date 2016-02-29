@@ -116,4 +116,11 @@ angular.module("CSSGrid", [])
         */
 
 
+        $scope.addElementsToGrid = function() {
+            var childdiv = document.getElementById("container-div-cercle-rouge");
+            document.getElementById("block_400_-200").appendChild(childdiv);
+            console.log("Add elements to grid !!!");
+        }
+
+
     })
