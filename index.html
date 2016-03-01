@@ -12,42 +12,46 @@
 <body ng-app="CSSGrid" ng-controller="CSSGridCtrl">
 
 
-<div id="block_container">
-    <div ng-repeat="squareid in squareID"
-         id="{{squareID[$index]}}"
-         ng-style="{'position': 'absolute','margin-top':squareMarginTop[$index],'margin-left':squareMarginLeft[$index] , 'width' : '100px' , 'height': '100px','background-color': squareBGColor[$index]}">
-        <p>{{squareX[$index]}}<br>{{squareY[$index]}}</p>
+
+
+
+
+<div class="windowContent">
+
+
+
+    <div id="block_container">
+        <div ng-repeat="squareid in squareID"
+             id="{{squareID[$index]}}"
+             ng-style="{'position': 'absolute','margin-top':squareMarginTop[$index],'margin-left':squareMarginLeft[$index] , 'width' : '100px' , 'height': '100px','background-color': squareBGColor[$index]}">
+            <p>{{squareX[$index]}}<br>{{squareY[$index]}}</p>
+        </div>
     </div>
+
+
+    <button ng-click="addElementsToGrid()" class="cta_add_elements"
+            style="position: absolute;z-index:500">ADD
+    </button>
+
+
+    <div id="container-div-cercle-rouge">
+        <div class="mon-cercle-rouge"></div>
+    </div>
+
+
+
+
 </div>
 
 
-<button ng-click="addElementsToGrid()" class="cta_add_elements"
-        style="position: absolute; margin-top:100px;z-index:500">ADD
-</button>
 
 
-
-<div id="container-div-cercle-jaune">
-    <div class="mon-cercle-jaune"></div>
-</div>
-
-
-<div id="container-div-cercle-rouge">
-    <div class="mon-cercle-rouge"></div>
-</div>
-
-
-
-
-<style>
-
-
-</style>
 
 
 <!-- Add AngularJS CDN  -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular-sanitize.min.js"></script>
+<script type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular-sanitize.min.js"></script>
 <script type="text/javascript" src="js/Cssgrid.js"></script>
 <!--CDN link for  TweenMax-->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>

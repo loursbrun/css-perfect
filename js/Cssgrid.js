@@ -129,7 +129,6 @@ angular.module("CSSGrid", [])
         //-- End Grid
 
 
-
         $scope.addElementsToGrid = function() {
 
 
@@ -139,33 +138,38 @@ angular.module("CSSGrid", [])
             console.log("window Width",  $scope.windowWidth);
             console.log("window Height",  $scope.windowHeight);
 
+
+
             // Cercle Rouge
             var width_container = 100 ;
             var height_container = 100 ;
-            var square_position_x = 400 ;
-            var square_position_y = -200 ;
+            var square_position_x = 200 ;
+            var square_position_y = 0 ;
 
 
             //Add element to grid
             var childdiv = document.getElementById("container-div-cercle-rouge");
 
-            document.getElementById("block_400_-200").appendChild(childdiv);
+
+            var nameDiv = String("block_" + square_position_x + "_" + square_position_y);
+            console.log(nameDiv);
+
+
+            document.getElementById(nameDiv).appendChild(childdiv);
             // Change width and height
             TweenMax.to(childdiv, 0, {css: { width: width_container, height : height_container}});
 
 
             // Breakpoint width & height
-            if($scope.windowWidth < 900){
+            if($scope.windowWidth < Math.abs(square_position_x) * 2 + width_container){
                 var monElement = document.getElementsByClassName("mon-cercle-rouge");
-                console.log("cococococococococ");
-              //  TweenMax.to(monElement, 0, {css: { backgroundColor: "#eeeeee" , right: 0   }});
                 if(square_position_x > 0){
                     TweenMax.to(monElement, 0, {css: { backgroundColor: "#eeeeee" , right: 0   }});
                 } else {
                     TweenMax.to(monElement, 0, {css: { backgroundColor: "#eeeeee" , left: 0   }});
                 }
             }
-            if($scope.windowHeight < 500){
+            if($scope.windowHeight < Math.abs(square_position_y) * 2 + height_container){
                 if(square_position_y < 0){
                     TweenMax.to(monElement, 0, {css: { backgroundColor: "#eeeeee" , top: 0   }});
                 } else {
@@ -173,20 +177,8 @@ angular.module("CSSGrid", [])
                 }
             }
 
-/*
-            .mon-cercle-rouge {
-                position: fixed;
-                background-color: blue;
-                border-radius: 50px;
-                right: 0px;
-            }
-*/
 
 
-
-
-            var childdiv = document.getElementById("container-div-cercle-jaune");
-             document.getElementById("block_-500_0").appendChild(childdiv);
         }
 
 
