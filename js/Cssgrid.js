@@ -146,12 +146,41 @@ angular.module("CSSGrid", [])
             var square_position_y = -200 ;
 
 
+            //Add element to grid
             var childdiv = document.getElementById("container-div-cercle-rouge");
 
             document.getElementById("block_400_-200").appendChild(childdiv);
             // Change width and height
             TweenMax.to(childdiv, 0, {css: { width: width_container, height : height_container}});
 
+
+            // Breakpoint width & height
+            if($scope.windowWidth < 900){
+                var monElement = document.getElementsByClassName("mon-cercle-rouge");
+                console.log("cococococococococ");
+              //  TweenMax.to(monElement, 0, {css: { backgroundColor: "#eeeeee" , right: 0   }});
+                if(square_position_x > 0){
+                    TweenMax.to(monElement, 0, {css: { backgroundColor: "#eeeeee" , right: 0   }});
+                } else {
+                    TweenMax.to(monElement, 0, {css: { backgroundColor: "#eeeeee" , left: 0   }});
+                }
+            }
+            if($scope.windowHeight < 500){
+                if(square_position_y < 0){
+                    TweenMax.to(monElement, 0, {css: { backgroundColor: "#eeeeee" , top: 0   }});
+                } else {
+                    TweenMax.to(monElement, 0, {css: { backgroundColor: "#eeeeee" , bottom: 0   }});
+                }
+            }
+
+/*
+            .mon-cercle-rouge {
+                position: fixed;
+                background-color: blue;
+                border-radius: 50px;
+                right: 0px;
+            }
+*/
 
 
 
