@@ -12,11 +12,9 @@ angular.module("CSSGrid", [])
         console.log($scope.nbMails);
 
 
-        // Array with name and data
-        // Colonne 0
 
 
-
+    // Grid
         $scope.squareID =[
             "block_0_500","block_0_400","block_0_300","block_0_200","block_0_100","block_0_0","block_0_-100","block_0_-200","block_0_-300","block_0_-400","block_0_-500",
             "block_100_500","block_100_400","block_100_300","block_100_200","block_100_100","block_100_0","block_100_-100","block_100_-200","block_100_-300","block_100_-400","block_100_-500",
@@ -128,42 +126,38 @@ angular.module("CSSGrid", [])
             "grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey",
             "#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc"
         ];
+        //-- End Grid
 
-
-        /*
-
-         $scope.squareID =[
-         "block_0_500","block_0_400","block_0_300","block_0_200","block_0_100","block_0_0","block_0_-100","block_0_-200","block_0_-300","block_0_-400","block_0_-500",
-         "block_100_500","block_100_400","block_100_300","block_100_200","block_100_100","block_100_0","block_100_-100","block_100_-200","block_100_-300","block_100_-400","block_100_-500"
-         ];
-         $scope.squareX = [
-         "0","0","0","0","0","0","0","0","0","0","0",
-         "100","100","100","100","100","100","100","100","100","100","100"
-         ];
-         $scope.squareY =[
-         "500","400","300","200","100","0","-100","-200","-300","-400","-500",
-         "500","400","300","200","100","0","-100","-200","-300","-400","-500"
-         ];
-         $scope.squareMarginTop =[
-         "450px","350px","250px","150px","50px","-50px","-150px","-250px","-350px","-450px","-550px",
-         "450px","350px","250px","150px","50px","-50px","-150px","-250px","-350px","-450px","-550px"
-         ];
-         $scope.squareMarginLeft = [
-         "-50px","-50px","-50px","-50px","-50px","-50px","-50px","-50px","-50px","-50px","-50px",
-         "50px","50px","50px","50px","50px","50px","50px","50px","50px","50px","50px"
-         ];
-         $scope.squareBGColor = [
-         "grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey",
-         "#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc","grey","#ccc"
-         ];
-
-        */
 
 
         $scope.addElementsToGrid = function() {
+
+
+            // Width of screen
+            $scope.windowWidth = window.innerWidth;
+            $scope.windowHeight = window.innerHeight;
+            console.log("window Width",  $scope.windowWidth);
+            console.log("window Height",  $scope.windowHeight);
+
+            // Cercle Rouge
+            var width_container = 100 ;
+            var height_container = 100 ;
+            var square_position_x = 400 ;
+            var square_position_y = -200 ;
+
+
             var childdiv = document.getElementById("container-div-cercle-rouge");
+
             document.getElementById("block_400_-200").appendChild(childdiv);
-            console.log("Add elements to grid !!!");
+            // Change width and height
+            TweenMax.to(childdiv, 0, {css: { width: width_container, height : height_container}});
+
+
+
+
+
+            var childdiv = document.getElementById("container-div-cercle-jaune");
+             document.getElementById("block_-500_0").appendChild(childdiv);
         }
 
 
